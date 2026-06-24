@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тетяна Гончарова — Професійний масажист | Київ</title>
+    <meta name="description" content="Професійний масаж у Києві. Індивідуальний підхід, 4 роки досвіду. Спеціалізація: робота зі шрамами, кінезіо тейпінг, масаж для вагітних, дітей, військових.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========== CSS VARIABLES ========== */
+        :root {
+            --bg-primary: #FDFBF7;
+            --bg-secondary: #F5F0E8;
+            --bg-card: #FFFFFF;
+            --text-primary: #4A4A4A;
+            --text-secondary: #7A7A7A;
+            --text-light: #A0A0A0;
+            --accent: #8B9A6B;
+            --accent-hover: #7A8960;
+            --accent-soft: #E8EBE0;
+            --border: #E5E0D8;
+            --shadow-soft: 0 4px 24px rgba(74, 74, 74, 0.06);
+            --shadow-medium: 0 8px 40px rgba(74, 74, 74, 0.1);
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* ========== RESET & BASE ========== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ========== ANIMATIONS ========== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
+
+        /* ========== NAVIGATION ========== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.2rem 0;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        .nav.scrolled {
+            background: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 var(--border);
+            padding: 0.8rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span {
+            color: var(--accent);
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            margin: 5px 0;
+            transition: var(--transition);
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 0 4rem;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--accent-soft) 100%);
+            z-index: -2;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(ellipse, rgba(139, 154, 107, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: breathe 8s ease-in-out infinite;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 60%;
+            height: 100%;
+            background: radial-gradient(ellipse, rgba(245, 240, 232, 0.6) 0%, transparent 60%);
+            border-radius: 50%;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            padding: 0.4rem 1rem;
+            background: var(--accent-soft);
+            border-radius: 50px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--accent);
+            font-weight: 400;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+            line-height: 1.8;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(139, 154, 107, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(139, 154, 107, 0.4);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: var(--text-primary);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border: 1.5px solid var(--border);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-soft);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            animation: fadeInUp 1s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image-placeholder {
+            width: 100%;
+            height: 550px;
+            background: linear-gradient(135deg, #E8E4DC 0%, #D5D0C8 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-medium);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .hero-image-placeholder::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.05) 10px,
+                rgba(255,255,255,0.05) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-50%, -50%); }
+        }
+
+        .hero-image-placeholder span {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            font-style: italic;
+            z-index: 2;
+        }
+
+        .hero-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--accent);
+            border-radius: 20px;
+            z-index: 0;
+            opacity: 0.3;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .hero-stat {
+            text-align: left;
+        }
+
+        .hero-stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 0.3rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* ========== SECTIONS COMMON ========== */
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-alt {
+            background: var(--bg-secondary);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* ========== ABOUT SECTION ========== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .about-image-placeholder {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, #E8E4DC 0%, #D5D0C8 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .about-image-placeholder span {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .about-image-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: -15px;
+            width: 100%;
+            height: 100%;
+            background: var(--accent-soft);
+            border-radius: 16px;
+            z-index: -1;
+        }
+
+        .about-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .about-text {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .about-feature-icon {
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            background: var(--accent-soft);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .about-feature-text h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .about-feature-text p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* ========== SERVICES SECTION ========== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+            border-color: transparent;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--accent-soft);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--accent);
+            transform: scale(1.1);
+        }
+
+        .service-card:hover .service-icon {
+            color: white;
+        }
+
+        .service-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .service-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ========== HOW I WORK SECTION ========== */
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .rule-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .rule-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .rule-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            opacity: 0.15;
+            line-height: 1;
+            margin-bottom: -1.5rem;
+        }
+
+        .rule-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-soft);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1.5rem;
+            transition: var(--transition);
+        }
+
+        .rule-card:hover .rule-icon {
+            background: var(--accent);
+            transform: rotate(5deg);
+        }
+
+        .rule-card:hover .rule-icon {
+            color: white;
+        }
+
+        .rule-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .rule-text {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .rule-highlight {
+            display: inline-block;
+            background: var(--accent-soft);
+            color: var(--accent);
+            padding: 0.2rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* ========== TRUST BADGES ========== */
+        .trust-section {
+            padding: 3rem 0;
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .trust-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .trust-icon {
+            font-size: 1.3rem;
+        }
+
+        /* ========== CONTACT / FOOTER ========== */
+        .contact-section {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+            padding: 5rem 0 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .contact-brand h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .contact-brand p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            max-width: 300px;
+        }
+
+        .contact-column h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-link {
+            display: block;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .contact-link:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .contact-messengers {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .messenger-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .messenger-btn:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.4);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-copy {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .footer-legal {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+            text-align: right;
+        }
+
+        /* ========== FLOATING CTA ========== */
+        .floating-cta {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            display: none;
+        }
+
+        .floating-cta.visible {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .floating-cta-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 4px 20px rgba(139, 154, 107, 0.4);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .floating-cta-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(139, 154, 107, 0.5);
+        }
+
+        /* ========== MOBILE RESPONSIVE ========== */
+        @media (max-width: 992px) {
+            .hero-container,
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-image-wrapper,
+            .hero-image,
+            .hero-image-placeholder {
+                height: 400px;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .rules-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 6rem 0 3rem;
+                min-height: auto;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .hero-stat-number {
+                font-size: 1.6rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                padding: 2rem;
+            }
+
+            .trust-grid {
+                gap: 1.5rem;
+            }
+
+            .floating-cta {
+                bottom: 1rem;
+                right: 1rem;
+                left: 1rem;
+            }
+
+            .floating-cta-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-legal {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-cta-group {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .about-image,
+            .about-image-placeholder {
+                height: 350px;
+            }
+        }
+
+        /* ========== MOBILE MENU ========== */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-primary);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            transform: translateX(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-link {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            transition: var(--transition);
+        }
+
+        .mobile-menu-link:hover {
+            color: var(--accent);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-primary);
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Тетяна <span>Гончарова</span></a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">Про мене</a>
+                <a href="#services" class="nav-link">Послуги</a>
+                <a href="#rules" class="nav-link">Правила</a>
+                <a href="#contact" class="nav-link">Контакти</a>
+                <a href="#contact" class="nav-cta">Записатися</a>
+            </div>
+            <button class="mobile-menu-btn" id="menuBtn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="menuClose">&times;</button>
+        <a href="#about" class="mobile-menu-link">Про мене</a>
+        <a href="#services" class="mobile-menu-link">Послуги</a>
+        <a href="#rules" class="mobile-menu-link">Правила</a>
+        <a href="#contact" class="mobile-menu-link">Контакти</a>
+        <a href="#contact" class="btn-primary" style="margin-top: 1rem;">Записатися на сеанс</a>
+    </div>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-tag">Професійний масаж у Києві</span>
+                <h1 class="hero-title">
+                    Поверніть своєму тілу<br>
+                    <em>відчуття легкості</em>
+                </h1>
+                <p class="hero-subtitle">
+                    Індивідуальний підхід до кожного клієнта. Спеціалізація на складних фізичних випадках:
+                    відновлення після травм, робота зі шрамами, підтримка вагітних та дітей.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="#contact" class="btn-primary">
+                        <span>Записатися на сеанс</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#services" class="btn-secondary">
+                        <span>Переглянути послуги</span>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">4+</div>
+                        <div class="hero-stat-label">роки досвіду</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">500+</div>
+                        <div class="hero-stat-label">задоволених клієнтів</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">10+</div>
+                        <div class="hero-stat-label">видів масажу</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <!-- ЗАМІНІТЬ ЦЕЙ БЛОК на реальне фото: -->
+                <div class="hero-image-placeholder">
+                    <span>📷 Фото майстера / робочий простір</span>
+                </div>
+                <!--
+                <img src="your-photo.jpg" alt="Тетяна Гончарова — професійний масажист" class="hero-image">
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TRUST BADGES ========== -->
+    <section class="trust-section">
+        <div class="section-container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <span class="trust-icon">🏥</span>
+                    <span>Офіційна реєстрація ФОП</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">📍</span>
+                    <span>Центр міста, зручна локація</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">💳</span>
+                    <span>Оплата на рахунок підприємця</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">🤝</span>
+                    <span>Тільки традиційний масаж</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section class="section" id="about">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-image-wrapper animate-on-scroll">
+                    <!-- ЗАМІНІТЬ ЦЕЙ БЛОК на реальне фото: -->
+                    <div class="about-image-placeholder">
+                        <span>📷 Фото процесу роботи</span>
+                    </div>
+                    <!--
+                    <img src="your-work-photo.jpg" alt="Процес масажу" class="about-image">
+                    -->
+                </div>
+                <div class="about-content animate-on-scroll delay-2">
+                    <span class="section-tag">Про мене</span>
+                    <h3>Досвід, якому можна довіряти</h3>
+                    <p class="about-text">
+                        Мене звати Тетяна, і я — професійний масажист із 4-річним досвідом. За роки практики я зрозуміла одне:
+                        кожне тіло унікальне, і універсальних рішень не існує. Саме тому мій підхід завжди індивідуальний.
+                    </p>
+                    <p class="about-text">
+                        Моя спеціалізація — робота зі складними випадками. Я маю значний досвід у відновленні військових після травм,
+                        підтримці жінок під час вагітності, а також у роботі з дітьми. Окремий напрям — терапія шрамової тканини
+                        та кінезіо тейпінг для зменшення болю та покращення мобільності.
+                    </p>
+                    <p class="about-text">
+                        Я працюю виключно в рамках традиційної терапевтичної та оздоровчої масажної практики.
+                        Моя мета — ваше фізичне відновлення та глибоке розслаблення, а не щось інше.
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="about-feature-icon">🎖️</div>
+                            <div class="about-feature-text">
+                                <h4>Військові</h4>
+                                <p>Відновлення після травм та перевантажень</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">🤰</div>
+                            <div class="about-feature-text">
+                                <h4>Вагітні</h4>
+                                <p>Безпечна підтримка на кожному терміні</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">👶</div>
+                            <div class="about-feature-text">
+                                <h4>Діти</h4>
+                                <p>Дитячий масаж з першого року життя</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">✂️</div>
+                            <div class="about-feature-text">
+                                <h4>Шрамова терапія</h4>
+                                <p>Робота з постопераційними шрамами</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES SECTION ========== -->
+    <section class="section section-alt" id="services">
+        <div class="section-container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Послуги</span>
+                <h2 class="section-title">Оберіть свій шлях до відновлення</h2>
+                <p class="section-subtitle">
+                    Кожна процедура адаптується під ваші поточні потреби та фізичний стан.
+                    Попередня консультація завжди безкоштовна.
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll delay-1">
+                    <div class="service-icon">🙌</div>
+                    <h3 class="service-title">Мануальна терапія</h3>
+                    <p class="service-desc">Глибока робота з м'язами, суглобами та фасціями для відновлення рухливості та зняття хронічних блоків.</p>
+                </div>
+                <div class="service-card animate-on-scroll delay-2">
+                    <div class="service-icon">🌿</div>
+                    <h3 class="service-title">Загальний масаж</h3>
+                    <p class="service-desc">Класичний оздоровчий масаж усього тіла для зняття втоми, покращення кровообігу та загального тонусу.</p>
+                </div>
+                <div class="service-card animate-on-scroll delay-3">
+                    <div class="service-icon">🇪🇸</div>
+                    <h3 class="service-title">Іспанський та 3D масаж</h3>
+                    <p class="service-desc">Інтенсивні техніки для глибокого опрацювання м'язів, корекції фігури та зняття м'язових зажимів.</p>
+                </div>
+                <div class="service-card animate-on-scroll delay-1">
+                    <div class="service-icon">👶</div>
+                    <h3 class="service-title">Дитячий масаж</h3>
+                    <p class="service-desc">Ніжні, безпечні техніки для дітей від народження. Покращує сон, травлення та загальний розвиток.</p>
+                </div>
+                <div class="service-card animate-on-scroll delay-2">
+                    <div class="service-icon">🌸</div>
+                    <h3 class="service-title">Масаж «Жіноче здоров'я»</h3>
+                    <p class="service-desc">Спеціалізований масаж для підтримки репродуктивного здоров'я, гормонального балансу та профілактики.</p>
+                </div>
+                <div class="service-card animate-on-scroll delay-3">
+                    <div class="service-icon">🏃</div>
+                    <h3 class="service-title">Спортивний масаж</h3>
+                    <p class="service-desc">Для атлетів та активних людей: підготовка до навантажень, відновлення після тренувань та профілактика травм.</p>
+                </div>
+                <div class="service-card animate-on-scroll delay-1">
+                    <div class="service-icon">😌</div>
+                    <h3 class="service-title">Розслаблювальний масаж</h3>
+                    <p class="service-desc">М'які техніки для глибокого розслаблення, зняття стресу та відновлення нервової системи.</p>
+                </div>
+                <div class="service-card animate-on-scroll delay-2">
+                    <div class="service-icon">✨</div>
+                    <h3 class="service-title">Масаж обличчя</h3>
+                    <p class="service-desc">Ліфтинг-ефект, покращення тонусу шкіри, зняття напруги жувальних м'язів та профілактика мімічних зморшок.</p>
+                </div>
+                <div class="service-card animate-on-scroll delay-3">
+                    <div class="service-icon">🧘</div>
+                    <h3 class="service-title">Стретчинг</h3>
+                    <p class="service-desc">Пасивне та активне розтягування для збільшення гнучкості, поліпшення постави та зняття м'язової скутості.</p>
+                </div>
+                <div class="service-card animate-on-scroll delay-1">
+                    <div class="service-icon">🤰</div>
+                    <h3 class="service-title">Масаж для вагітних</h3>
+                    <p class="service-desc">Безпечні техніки для зняття болю в спині, набряків та напруги. Підтримка на кожному триместрі.</p>
+                </div>
+                <div class="service-card animate-on-scroll delay-2">
+                    <div class="service-icon">🔪</div>
+                    <h3 class="service-title">Лезовий масаж</h3>
+                    <p class="service-desc">Унікальна техніка з використанням спеціальних лез для глибокого опрацювання фасцій та м'язових спайок.</p>
+                </div>
+                <div class="service-card animate-on-scroll delay-3">
+                    <div class="service-icon">🏷️</div>
+                    <h3 class="service-title">Кінезіо тейпінг</h3>
+                    <p class="service-desc">Накладання кінезіологічних тейпів для зменшення болю, зняття набряків та підтримки м'язів між сеансами.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HOW I WORK / RULES ========== -->
+    <section class="section" id="rules">
+        <div class="section-container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Як я працюю</span>
+                <h2 class="section-title">Прозорі правила — комфорт для вас</h2>
+                <p class="section-subtitle">
+                    Я ціную ваш час і довіряю професійній етикі.
+                    Ось три речі, які варто знати перед першим візитом.
+                </p>
+            </div>
+            <div class="rules-grid">
+                <div class="rule-card animate-on-scroll delay-1">
+                    <div class="rule-number">01</div>
+                    <div class="rule-icon">💬</div>
+                    <h3 class="rule-title">Запис через месенджери</h3>
+                    <p class="rule-text">
+                        Будь ласка, пишіть мені у Telegram, Viber або Instagram.
+                        Я не беру слухавку під час сеансу — це моя принципова позиція,
+                        щоб кожен клієнт отримував 100% уваги.
+                    </p>
+                    <span class="rule-highlight">Передзвоню кожному</span>
+                </div>
+                <div class="rule-card animate-on-scroll delay-2">
+                    <div class="rule-number">02</div>
+                    <div class="rule-icon">💳</div>
+                    <h3 class="rule-title">Офіційна оплата</h3>
+                    <p class="rule-text">
+                        Оплата здійснюється виключно на розрахунковий рахунок зареєстрованого ФОП.
+                        Ви отримуєте повну фінансову прозорість та офіційний документ про послугу.
+                    </p>
+                    <span class="rule-highlight">100% легальність</span>
+                </div>
+                <div class="rule-card animate-on-scroll delay-3">
+                    <div class="rule-number">03</div>
+                    <div class="rule-icon">🛡️</div>
+                    <h3 class="rule-title">Суворо терапевтичний масаж</h3>
+                    <p class="rule-text">
+                        Моя практика базується виключно на традиційних оздоровчих та терапевтичних техніках.
+                        Я не надаю послуги еротичного характеру — це принцип, а не обмеження.
+                    </p>
+                    <span class="rule-highlight">Професійна етика понад усе</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT / FOOTER ========== -->
+    <section class="contact-section" id="contact">
+        <div class="section-container">
+            <div class="contact-grid">
+                <div class="contact-brand">
+                    <h3>Тетяна Гончарова</h3>
+                    <p>
+                        Професійний масажист з індивідуальним підходом.
+                        Ваше тіло заслуговує на турботу професіонала.
+                        Запишіться на консультацію — і ми разом знайдемо оптимальний шлях до вашого відновлення.
+                    </p>
+                    <div class="contact-messengers">
+                        <a href="https://t.me/your_username" target="_blank" class="messenger-btn">
+                            <span>📱</span> Telegram
+                        </a>
+                        <a href="viber://chat?number=+380XXXXXXXXX" class="messenger-btn">
+                            <span>💬</span> Viber
+                        </a>
+                        <a href="https://instagram.com/your_username" target="_blank" class="messenger-btn">
+                            <span>📷</span> Instagram
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-column">
+                    <h4>Локація</h4>
+                    <span class="contact-link">📍 Центр міста, Київ</span>
+                    <span class="contact-link">🚇 Зручна транспортна розв'язка</span>
+                    <span class="contact-link">🅿️ Поруч з парковкою</span>
+                </div>
+                <div class="contact-column">
+                    <h4>Графік</h4>
+                    <span class="contact-link">Пн–Пт: 9:00 – 20:00</span>
+                    <span class="contact-link">Сб: 10:00 – 16:00</span>
+                    <span class="contact-link">Нд: вихідний</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copy">
+                    &copy; 2024 Тетяна Гончарова. Всі права захищені.
+                </div>
+                <div class="footer-legal">
+                    ФОП | Оплата на офіційний рахунок | Тільки традиційний масаж
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FLOATING CTA ========== -->
+    <div class="floating-cta" id="floatingCta">
+        <a href="#contact" class="floating-cta-btn">
+            <span>Записатися</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+    </div>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        // Scroll Animation Observer
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navigation Scroll Effect
+        const nav = document.getElementById('nav');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Floating CTA Visibility
+        const floatingCta = document.getElementById('floatingCta');
+        const heroSection = document.getElementById('hero');
+
+        window.addEventListener('scroll', () => {
+            const heroBottom = heroSection.getBoundingClientRect().bottom;
+            if (heroBottom < 0) {
+                floatingCta.classList.add('visible');
+            } else {
+                floatingCta.classList.remove('visible');
+            }
+        });
+
+        // Mobile Menu
+        const menuBtn = document.getElementById('menuBtn');
+        const menuClose = document.getElementById('menuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add subtle parallax effect to hero background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroBg = document.querySelector('.hero-bg');
+            if (heroBg && scrolled < window.innerHeight) {
+                heroBg.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+    </script>
+
+</body>
+</html>
